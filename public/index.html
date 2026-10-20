@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Stockroom Kids — учёт магазина</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Segoe UI' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div id="login-screen" class="login-wrap">
+    <div class="login-card">
+      <div class="brand">
+        <div class="brand-mark">SK</div>
+        <div>
+          <div class="brand-name">Stockroom Kids</div>
+          <div class="brand-sub">Учёт товаров, закупок и продаж</div>
+        </div>
+      </div>
+      <h1 class="section-gap">Вход в систему</h1>
+      <p class="muted small">Введите логин и пароль, выданные владельцем магазина.</p>
+      <form id="login-form" class="section-gap" autocomplete="on">
+        <label class="field">
+          <span class="field-label">Логин</span>
+          <input class="input" name="login" autocomplete="username" required autofocus>
+        </label>
+        <label class="field section-gap">
+          <span class="field-label">Пароль</span>
+          <input class="input" name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <div id="login-error" class="error-box section-gap" hidden></div>
+        <button class="btn btn-primary btn-block section-gap" type="submit">Войти</button>
+      </form>
+      <p class="muted small section-gap">Доступ разграничен по ролям: владелец, закупщик, продавец.</p>
+    </div>
+  </div>
+
+  <div id="shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SK</div>
+        <div>
+          <div class="brand-name">Stockroom Kids</div>
+          <div class="brand-sub">Учёт магазина</div>
+        </div>
+      </div>
+      <nav id="nav-links"></nav>
+      <div class="sidebar-footer">
+        <div class="user-box" id="user-box"></div>
+        <button type="button" class="btn btn-sm btn-block" id="logout-btn">Выйти</button>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="btn btn-icon hamburger" id="hamburger" aria-label="Открыть меню">☰</button>
+        <span class="page-title" id="page-title">Главная</span>
+        <div class="spacer"></div>
+      </header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <div id="toast-root"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

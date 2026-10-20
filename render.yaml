@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: stockroom-kids
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: SRK_TRUST_PROXY
+        value: "1"
+      - key: SECURE_COOKIES
+        value: "1"
+      - key: SRK_DATA_DIR
+        value: /data
+      - key: SRK_UPLOAD_DIR
+        value: /data/uploads
+      - key: SRK_BACKUP_DIR
+        value: /data/backups
+    disk:
+      name: stockroom-data
+      mountPath: /data
+      sizeGB: 1

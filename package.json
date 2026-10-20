@@ -1,0 +1,16 @@
+{
+  "name": "stockroom-kids",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stockroom Kids — учет товаров, закупок, себестоимости, склада и продаж магазина детских товаров",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "seed": "node src/seed.mjs",
+    "test": "node tests/acceptance.mjs",
+    "backup": "node scripts/backup.mjs"
+  }
+}
